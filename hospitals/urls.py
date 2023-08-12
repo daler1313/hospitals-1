@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CategoryList, CategoryDetail,ContactList,ContactDetail,HospitalList,HospitalDetail
+from .views import CategoryList, CategoryDetail,ContactList,ContactDetail,HospitalList,HospitalDetail,HospitalSearchByAddress,HospitalSearchByCategory,HospitalSearchByName
 
 
 urlpatterns = [
@@ -10,4 +10,8 @@ urlpatterns = [
     path("contact/<int:pk>/", ContactDetail.as_view(), name="contact-detail"),
     path("hospital/", HospitalList.as_view(), name="hospitalt-list"),
     path("hospital/<int:pk>/", HospitalDetail.as_view(), name="hospitalt-detail"),
+    path('hospital/<str:address>/', HospitalSearchByAddress.as_view()),
+    path('hospital/<int:category>/', HospitalSearchByCategory.as_view()),
+    path('hospital/<str:name>/', HospitalSearchByName.as_view()),
+    
 ]

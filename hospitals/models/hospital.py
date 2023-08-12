@@ -15,6 +15,6 @@ class Hospital(models.Model):
     verbose_name = "Больница"
     verbose_name_plural = "Больници"
 
-  def __str__(self):
+  def __str__(self): 
     return f"{self.name}"
 

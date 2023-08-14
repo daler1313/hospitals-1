@@ -20,7 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",include("hospitals.urls"))
+    path("", include("establishments.urls"))
 ]
 if (settings.DEBUG):
     # swagger

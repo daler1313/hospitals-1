@@ -1,20 +1,16 @@
 from django.shortcuts import render
 from rest_framework import generics
-
+from rest_framework import viewsets
 
 from ..models import Establishment
 from ..serializer import EstablishmentSerializer
 
 
-# Create your views here.
-class EstablishmentList(generics.ListCreateAPIView):
-  queryset = Establishment.objects.all()
-  serializer_class = EstablishmentSerializer
+class EstablishmentViewSet(viewsets.ModelViewSet):
+    queryset = Establishment.objects.all()
+    serializer_class = EstablishmentSerializer
 
 
-class EstablishmentDetail(generics.RetrieveUpdateDestroyAPIView):
-  queryset = Establishment.objects.all()
-  serializer_class = EstablishmentSerializer
 
 
 class EstablishmentSearchByName(generics.ListAPIView):

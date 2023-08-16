@@ -1,15 +1,16 @@
-from django.urls import path
+from django.urls import path,include
+from rest_framework import routers
 from .views import *
 
 
+router = routers.DefaultRouter()
+router.register("categorys",CategoryViewSet)
+router.register("contacts", ContactViewSet, "contacts")
+router.register("establishments", EstablishmentViewSet, "establishments")
+
+
 urlpatterns = [
-    #fsdfsd
-    path("category/", CategoryList.as_view(), name="category-list"),
-    path("category/<int:pk>/", CategoryDetail.as_view(), name="category-detail"),
-    path("contact/", ContactList.as_view(), name="contact-list"),
-    path("contact/<int:pk>/", ContactDetail.as_view(), name="contact-detail"),
-    path("establishment/", EstablishmentList.as_view(), name="establishment-list"),
-    path("establishment/<int:pk>/", EstablishmentDetail.as_view(),  name="establishment-detail"),
+    path("", include(router.urls)),
     path('establishment/<str:address>/', EstablishmentSearchByAddress.as_view()),
     path('establishment/<int:category>/',EstablishmentSearchByCategory.as_view()),
     path('establishment/<str:name>/', EstablishmentSearchByName.as_view()),

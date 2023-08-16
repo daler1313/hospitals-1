@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     'establishments.apps.EstablishmentsConfig',
     "rest_framework",
     'drf_spectacular',
 ]
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.

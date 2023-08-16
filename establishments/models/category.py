@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
   title = models.CharField("название категории", max_length=50)
+  
   description = models.TextField("описание")
 
   class Meta:
@@ -11,3 +12,6 @@ class Category(models.Model):
 
   def __str__(self):
     return f"{self.title}"
+
+
+

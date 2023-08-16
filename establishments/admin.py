@@ -18,4 +18,6 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Establishment)
 class EstablishmentAdmin(admin.ModelAdmin):
   list_display = ("name", "description", "address","city","contact")
+
+
   

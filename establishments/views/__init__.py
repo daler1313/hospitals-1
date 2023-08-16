@@ -1,3 +1,3 @@
-from .category import CategoryList,CategoryDetail
-from .contact import ContactList,ContactDetail
+from .category import CategoryViewSet
+from .contact import ContactViewSet
 from .establishment import *
